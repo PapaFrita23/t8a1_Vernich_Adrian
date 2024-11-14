@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">t5a3_vernich_adrian2</string>
+    <string name="global">GLOBAL POSITION</string>
+    <string name="text">Welcome</string>
+    <string name="movement">MOVEMENTS</string>
+    <string name="transference">TRANSFERENCES</string>
+    <string name="password">CHANGE PASSWORD</string>
+    <string name="promotion">PROMOTIONS</string>
+    <string name="cashiers">CASHIERS</string>
+    <string name="exit">EXIT</string>
+    <string name="banco">Bank</string>
+    <string name="choose_acount">Choose your account:</string>
+    <string-array name="accounts">
+        <item>ES60-2100-0418-40-1234567891</item>
+        <item>ES90-2080-5801-10-1234567891</item>
+        <item>ES50-6420-1692-30-1234567891</item>
+        <item>ES90-1479-1793-60-1234567891</item>
+    </string-array>
+    <string-array name="money">
+        <item>€</item>
+        <item>$</item>
+    </string-array>
+</resources>

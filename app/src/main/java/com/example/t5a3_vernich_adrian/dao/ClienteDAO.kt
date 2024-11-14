@@ -1,10 +1,10 @@
-package com.example.bancoapiprofe.dao
+package com.example.t5a3_vernich_adrian.dao
 
 import android.content.ContentValues
 import android.database.Cursor
 import android.text.TextUtils
-import com.example.bancoapiprofe.bd.MiBD
-import com.example.bancoapiprofe.pojo.Cliente
+import com.example.t5a3_vernich_adrian.bd.MiBD
+import com.example.t5a3_vernich_adrian.pojo.Cliente
 import java.lang.String
 import kotlin.Any
 import kotlin.Int

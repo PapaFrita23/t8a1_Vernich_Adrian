@@ -1,9 +1,9 @@
-package com.example.bancoapiprofe.bd
+package com.example.t5a3_vernich_adrian.bd
 
 import android.content.Context
-import com.example.bancoapiprofe.pojo.Cliente
-import com.example.bancoapiprofe.pojo.Cuenta
-import com.example.bancoapiprofe.pojo.Movimiento
+import com.example.t5a3_vernich_adrian.pojo.Cliente
+import com.example.t5a3_vernich_adrian.pojo.Cuenta
+import com.example.t5a3_vernich_adrian.pojo.Movimiento
 
 class MiBancoOperacional protected constructor(context: Context?) {
     private val miBD: MiBD?

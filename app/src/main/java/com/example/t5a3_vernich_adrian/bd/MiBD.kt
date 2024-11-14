@@ -1,12 +1,12 @@
-package com.example.bancoapiprofe.bd
+package com.example.t5a3_vernich_adrian.bd
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import com.example.bancoapiprofe.dao.ClienteDAO
-import com.example.bancoapiprofe.dao.CuentaDAO
-import com.example.bancoapiprofe.dao.MovimientoDAO
+import com.example.t5a3_vernich_adrian.dao.ClienteDAO
+import com.example.t5a3_vernich_adrian.dao.CuentaDAO
+import com.example.t5a3_vernich_adrian.dao.MovimientoDAO
 
 class MiBD
 /**

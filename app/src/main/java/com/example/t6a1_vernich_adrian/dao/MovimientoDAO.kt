@@ -1,10 +1,10 @@
-package com.example.t5a3_vernich_adrian.dao
+package com.example.t6a1_vernich_adrian.dao
 
 import android.content.ContentValues
 import android.database.Cursor
-import com.example.t5a3_vernich_adrian.bd.MiBD
-import com.example.t5a3_vernich_adrian.pojo.Cuenta
-import com.example.t5a3_vernich_adrian.pojo.Movimiento
+import com.example.t6a1_vernich_adrian.pojo.Movimiento
+import com.example.t6a1_vernich_adrian.bd.MiBD
+import com.example.t6a1_vernich_adrian.pojo.Cuenta
 import java.lang.String
 import java.util.Date
 import kotlin.Any
@@ -178,8 +178,10 @@ class MovimientoDAO : PojoDAO {
 
     fun getMovimientosTipo(cuenta: Cuenta?, tipo: Int): ArrayList<*> {
         val listaMovimientos: ArrayList<Movimiento> = ArrayList<Movimiento>()
+
         val condicion =
             "idcuentaorigen=" + String.valueOf(cuenta?.getId() ?: -1) + " AND tipo = " + tipo.toString()
+
         val columnas = arrayOf(
             "id",
             "tipo",
@@ -189,8 +191,9 @@ class MovimientoDAO : PojoDAO {
             "idcuentaorigen",
             "idcuentadestino"
         )
-        val cursor: Cursor? =
-            MiBD.dB?.query("movimientos", columnas, condicion, null, null, null, null) ?: null
+
+        val cursor: Cursor? = MiBD.dB?.query("movimientos", columnas, condicion, null, null, null, null) ?: null
+
         if (cursor?.moveToFirst() == true) {
             //Recorremos el cursor hasta que no haya más registros
             do {
@@ -203,7 +206,6 @@ class MovimientoDAO : PojoDAO {
 
                 // Asignamos la cuenta de origen
                 c.setCuentaOrigen(cuenta)
-
 
                 // Asignamos la cuenta de destino
                 var a = Cuenta()
@@ -219,6 +221,7 @@ class MovimientoDAO : PojoDAO {
                 listaMovimientos.add(c)
             } while (cursor.moveToNext())
         }
+
         return listaMovimientos
     }
 }

@@ -1,12 +1,12 @@
-package com.example.t5a3_vernich_adrian.bd
+package com.example.t6a1_vernich_adrian.bd
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import com.example.t5a3_vernich_adrian.dao.ClienteDAO
-import com.example.t5a3_vernich_adrian.dao.CuentaDAO
-import com.example.t5a3_vernich_adrian.dao.MovimientoDAO
+import com.example.t6a1_vernich_adrian.dao.ClienteDAO
+import com.example.t6a1_vernich_adrian.dao.CuentaDAO
+import com.example.t6a1_vernich_adrian.dao.MovimientoDAO
 
 class MiBD
 /**
@@ -134,7 +134,7 @@ protected constructor(context: Context?) :
             private set
 
         //nombre de la base de datos
-        private const val database = "MiBanco"
+        private const val database = "adt5_practica2"
 
         //versión de la base de datos
         private const val version = 11

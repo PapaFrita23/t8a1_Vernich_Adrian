@@ -1,4 +1,4 @@
-package com.example.t5a3_vernich_adrian
+package com.example.t6a1_vernich_adrian
 
 import org.junit.Test
 

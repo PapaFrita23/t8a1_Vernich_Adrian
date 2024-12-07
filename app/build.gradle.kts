@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.t5a3_vernich_adrian"
+    namespace = "com.example.t6a1_vernich_adrian"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.t5a3_vernich_adrian"
+        applicationId = "com.example.t6a1_vernich_adrian"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -42,6 +42,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)

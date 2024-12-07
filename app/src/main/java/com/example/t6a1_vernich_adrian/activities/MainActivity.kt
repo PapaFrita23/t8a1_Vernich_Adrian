@@ -1,15 +1,13 @@
-package com.example.t5a3_vernich_adrian
+package com.example.t6a1_vernich_adrian.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.t5a3_vernich_adrian.bd.MiBancoOperacional
-import com.example.t5a3_vernich_adrian.databinding.ActivityLoginBinding
-import com.example.t5a3_vernich_adrian.databinding.ActivityWelcomeBinding
-import com.example.t5a3_vernich_adrian.databinding.ActivityMainBinding
-import com.example.t5a3_vernich_adrian.pojo.Cliente
+import com.example.t6a1_vernich_adrian.databinding.ActivityMainBinding
+import com.example.t6a1_vernich_adrian.pojo.Cliente
+import com.example.t6a1_vernich_adrian.bd.MiBancoOperacional
 
 class MainActivity : AppCompatActivity() {
 

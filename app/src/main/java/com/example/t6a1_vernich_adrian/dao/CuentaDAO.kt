@@ -1,11 +1,11 @@
-package com.example.t5a3_vernich_adrian.dao
+package com.example.t6a1_vernich_adrian.dao
 
 import android.content.ContentValues
 import android.database.Cursor
 import android.text.TextUtils
-import com.example.t5a3_vernich_adrian.bd.MiBD
-import com.example.t5a3_vernich_adrian.pojo.Cliente
-import com.example.t5a3_vernich_adrian.pojo.Cuenta
+import com.example.t6a1_vernich_adrian.bd.MiBD
+import com.example.t6a1_vernich_adrian.pojo.Cliente
+import com.example.t6a1_vernich_adrian.pojo.Cuenta
 import java.lang.String
 import kotlin.Any
 import kotlin.Int

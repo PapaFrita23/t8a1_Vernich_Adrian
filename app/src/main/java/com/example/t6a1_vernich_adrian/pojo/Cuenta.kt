@@ -1,4 +1,4 @@
-package com.example.t5a3_vernich_adrian.pojo
+package com.example.t6a1_vernich_adrian.pojo
 
 import java.io.Serializable
 

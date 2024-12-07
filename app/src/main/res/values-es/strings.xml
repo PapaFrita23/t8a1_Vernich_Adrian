@@ -10,6 +10,9 @@
     <string name="exit">SALIR</string>
     <string name="banco">Banco</string>
     <string name="choose_acount">Elige tu cuenta:</string>
+    <string name="old_passwd">Introduce tu contraseña antigua:</string>
+    <string name="new_passwd">Introduce tu contraseña nueva:</string>
+    <string name="dcsImg">Desc imagen</string>
     <string-array name="accounts">
         <item>ES60-2100-0418-40-1234567891</item>
         <item>ES90-2080-5801-10-1234567891</item>

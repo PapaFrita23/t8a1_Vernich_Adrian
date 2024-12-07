@@ -11,6 +11,9 @@
     <string name="exit">EXIT</string>
     <string name="banco">Bank</string>
     <string name="choose_acount">Choose your account:</string>
+    <string name="old_passwd">Enter your old password:</string>
+    <string name="new_passwd">Enter your new password:</string>
+    <string name="dcsImg">Desc imagen</string>
     <string-array name="accounts">
         <item>ES60-2100-0418-40-1234567891</item>
         <item>ES90-2080-5801-10-1234567891</item>
@@ -21,4 +24,6 @@
         <item>€</item>
         <item>$</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.t5a3_vernich_adrian
+package com.example.t6a1_vernich_adrian
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

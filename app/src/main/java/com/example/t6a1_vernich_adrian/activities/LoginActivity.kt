@@ -8,11 +8,11 @@ import com.example.t6a1_vernich_adrian.databinding.ActivityLoginBinding
 import com.example.t6a1_vernich_adrian.pojo.Cliente
 
 class LoginActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -27,7 +27,6 @@ class LoginActivity : AppCompatActivity() {
             // Manejar error si no hay cliente válido
             Toast.makeText(this, "Error al cargar el cliente logueado", Toast.LENGTH_SHORT).show()
         }
-
 
         binding.btnSalir.setOnClickListener {
             finish()

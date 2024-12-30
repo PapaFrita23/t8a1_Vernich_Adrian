@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.t6a1_vernich_adrian.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -87,6 +87,7 @@ class TransferActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
+
             }
         }
 

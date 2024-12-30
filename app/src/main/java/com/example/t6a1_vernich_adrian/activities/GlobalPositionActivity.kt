@@ -1,53 +1,65 @@
 package com.example.t6a1_vernich_adrian.activities
 
 import android.os.Bundle
-import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.example.t6a1_vernich_adrian.R
 import com.example.t6a1_vernich_adrian.databinding.ActivityGlobalPositionBinding
-import com.example.t6a1_vernich_adrian.listener.onClickListenerCuenta
+import com.example.t6a1_vernich_adrian.fragments.AccountsFragment
+import com.example.t6a1_vernich_adrian.listener.OnClickListener
 import com.example.t6a1_vernich_adrian.pojo.Cliente
 import com.example.t6a1_vernich_adrian.pojo.Cuenta
-import com.example.t6a1_vernich_adrian.adapter.CuentaAdapter
-import com.example.t6a1_vernich_adrian.bd.MiBancoOperacional
 
-class GlobalPositionActivity : AppCompatActivity(), onClickListenerCuenta {
-
+class GlobalPositionActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding: ActivityGlobalPositionBinding
-    private lateinit var cuentaAdapter: CuentaAdapter
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var itemDecoration: DividerItemDecoration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGlobalPositionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Obtener instancia de MiBancoOperacional
-        val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
-        // Obtener Cliente desde el Intent
-        val cliente = intent.getSerializableExtra("Cliente") as? Cliente
-        if (cliente == null) {
-            // Maneja el caso donde cliente es nulo, como mostrar un mensaje de error
-            Toast.makeText(this, "Cliente no válido", Toast.LENGTH_SHORT).show()
-            return
+        // Obtén el cliente desde el Intent
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente
+
+        if (isTablet()) {
+            // Tablet: Mostrar ambos fragments
+            loadFragment(AccountsFragment(),cliente)
+        }else{
+            // Encuentra el fragmento cargado automáticamente
+            val fragAccount = supportFragmentManager.findFragmentById(R.id.fragmentGlobal) as? AccountsFragment
+            fragAccount?.setCliente(cliente)
         }
-        // Obtener lista de cuentas desde la base de datos, o lista vacía si es nula
-        val listaCuentasBD: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as? ArrayList<Cuenta> ?: ArrayList()
 
-        cuentaAdapter = CuentaAdapter(listaCuentasBD, this)
-        linearLayoutManager = LinearLayoutManager(this)
-        itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-
-        binding.recyclerview.apply {
-            layoutManager = linearLayoutManager
-            adapter = cuentaAdapter
-            addItemDecoration(itemDecoration)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.globalPosition)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
     }
 
-    override fun onItemClick(cuenta: Cuenta) {
-        Toast.makeText(this, "Has seleccionado la cuenta ${cuenta.getBanco()}", Toast.LENGTH_SHORT).show()
+    private fun isTablet(): Boolean {
+        return resources.configuration.smallestScreenWidthDp >= 600
+    }
+
+    private fun loadFragment(fragment: Fragment, cliente: Cliente){
+        val fragAccount = fragment as? AccountsFragment
+        fragAccount?.setCliente(cliente)
+
+        val transaction = supportFragmentManager.beginTransaction()
+
+        if (fragAccount != null) {
+            transaction.replace(R.id.fragment_global, fragAccount)
+        }
+
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    override fun onClick(cuenta: Cuenta) {
+        TODO("Not yet implemented")
     }
 }

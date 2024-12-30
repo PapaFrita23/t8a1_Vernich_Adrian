@@ -10,7 +10,6 @@ import com.example.t6a1_vernich_adrian.pojo.Cliente
 import com.example.t6a1_vernich_adrian.bd.MiBancoOperacional
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,11 +29,13 @@ class MainActivity : AppCompatActivity() {
 
             val ClienteLogueado = mbo?.login(Cliente) ?: -1
             Log.i("dni",dni)
+
             if (dni.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             } else if (ClienteLogueado != -1) {
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.putExtra("Cliente", ClienteLogueado)
+
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Este usuario no esta dentro de la base de datos", Toast.LENGTH_SHORT).show()
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnSalirApp.setOnClickListener {
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
+
             finish()
         }
     }

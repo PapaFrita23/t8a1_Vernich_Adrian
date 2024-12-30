@@ -9,18 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.t6a1_vernich_adrian.databinding.ActivityMovimientosBinding
-import com.example.t6a1_vernich_adrian.listener.onClickListenerMovimiento
 import com.example.t6a1_vernich_adrian.pojo.Cliente
 import com.example.t6a1_vernich_adrian.pojo.Cuenta
 import com.example.t6a1_vernich_adrian.pojo.Movimiento
-import com.example.t6a1_vernich_adrian.adapter.MovimientoAdapter
 import com.example.t6a1_vernich_adrian.bd.MiBancoOperacional
+import com.example.t6a1_vernich_adrian.listener.OnClickListener
+import com.example.t6a1_vernich_adrian.listener.OnClickListenerMov
 
-class MovimientoActivity : AppCompatActivity(), onClickListenerMovimiento {
-
+class MovimientoActivity : AppCompatActivity(), OnClickListener, OnClickListenerMov {
     // Declaración de propiedades necesarias
     private lateinit var binding: ActivityMovimientosBinding // Binding para acceder a las vistas del layout
-    private lateinit var movimientoAdapter: MovimientoAdapter // Adaptador para los movimientos
+    private lateinit var movimientoAdapter: MovAdapter // Adaptador para los movimientos
     private lateinit var linearLayoutManager: LinearLayoutManager // LayoutManager para el RecyclerView
     private lateinit var itemDecoration: DividerItemDecoration // Decoración para separar los ítems del RecyclerView
     private var cuentasArray: ArrayList<Cuenta> = ArrayList() // Lista de cuentas del cliente
@@ -28,6 +27,7 @@ class MovimientoActivity : AppCompatActivity(), onClickListenerMovimiento {
     // Método que se ejecuta cuando se crea la actividad
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMovimientosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -42,6 +42,7 @@ class MovimientoActivity : AppCompatActivity(), onClickListenerMovimiento {
 
         // Obtener instancia de la base de datos y el cliente
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
+
         val cliente = intent.getSerializableExtra("Cliente") as? Cliente
         if (cliente == null) { // Validar si el cliente es nulo
             Toast.makeText(this, "Cliente no válido", Toast.LENGTH_SHORT).show()
@@ -93,7 +94,7 @@ class MovimientoActivity : AppCompatActivity(), onClickListenerMovimiento {
         val movimientos = mbo?.getMovimientos(cuenta) as? ArrayList<Movimiento> ?: ArrayList() // Movimientos obtenidos
 
         // Crear un nuevo adaptador para los movimientos
-        movimientoAdapter = MovimientoAdapter(movimientos, this)
+        movimientoAdapter = MovAdapter(movimientos, this)
         // Asignar el adaptador al RecyclerView
         binding.rvMovimientos.adapter = movimientoAdapter
 
@@ -102,7 +103,11 @@ class MovimientoActivity : AppCompatActivity(), onClickListenerMovimiento {
         }
     }
 
-    override fun onItemClick(movimiento: Movimiento) {
+    override fun onClick(cuenta: Cuenta) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onClick(movimiento: Movimiento) {
         Toast.makeText(this, "Movimiento seleccionado: ${movimiento.getDescripcion()}", Toast.LENGTH_SHORT).show()
     }
 }

@@ -19,6 +19,9 @@
             android:name=".activities.GlobalPositionActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.GlobalPositionDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ChancePasswdActivity"
             android:exported="false" />
         <activity

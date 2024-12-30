@@ -47,24 +47,11 @@
                     android:id="@+id/txtNameM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="Nombre movimiento"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"/>
-
-                <TextView
-                    android:id="@+id/txtDatosM"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    tools:text="Datos Movimientos"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:text="cuenta"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             startActivity(intent)
         }
 
-        drawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout = findViewById(R.id.main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 

@@ -38,6 +38,7 @@
         <ListPreference
             app:key="datos"
             app:title="Origen de los datos"
+            app:summary="Base de datos local"
             app:useSimpleSummaryProvider="true"
             app:dialogTitle="Indicar País donde vives"
             app:entries="@array/datos"

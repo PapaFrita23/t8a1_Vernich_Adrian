@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSuperior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/perfil" />
+
+            <TextView
+                android:id="@+id/textViewWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:text="Bienvenido/a, "
+                android:textSize="20sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Contenedor para los botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPosicionGlobal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/global"
+                app:icon="@drawable/ic_diamond" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMovimientos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movement"
+                app:icon="@drawable/ic_movements"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTransferencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/transference"
+                app:icon="@drawable/ic_tranference"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnContrasenya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                app:icon="@drawable/ic_password"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPromocion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/promotion"
+                app:icon="@drawable/ic_promotions"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCajero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cashiers"
+                app:icon="@drawable/ic_cashier"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSalir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exit"
+                app:icon="@drawable/ic_exit"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/green"
+        app:menu="@menu/menu" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottomNavigation"
+        app:layout_anchorGravity="top|center"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/account_balance"
+        app:borderWidth="16dp"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

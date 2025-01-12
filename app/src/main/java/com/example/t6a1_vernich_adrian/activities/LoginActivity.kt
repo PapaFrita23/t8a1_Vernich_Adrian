@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment
 import com.example.t6a1_vernich_adrian.R
 import com.example.t6a1_vernich_adrian.databinding.ActivityLoginBinding
 import com.example.t6a1_vernich_adrian.fragments.AccountsFragment
-import com.example.t6a1_vernich_adrian.fragments.AccountsMovementsFragment
 import com.example.t6a1_vernich_adrian.fragments.HomeFragment
 import com.example.t6a1_vernich_adrian.pojo.Cliente
 import com.google.android.material.navigation.NavigationView
@@ -60,26 +59,37 @@ class LoginActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             R.id.nav_home -> {
                 startActivity(Intent(this, MainActivity::class.java))
             }
+
             R.id.nav_posGlobal -> {
                 loadFragment(AccountsFragment(), cliente!!)
             }
+
             R.id.nav_movimientos -> {
                 val intent = Intent(this, MovimientoActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
             R.id.nav_transferencias -> {
                 val intent = Intent(this, TransferActivity::class.java)
                 startActivity(intent)
             }
+
             R.id.nav_cambiarPass -> {
                 val intent = Intent(this, ChancePasswdActivity::class.java)
                 intent.putExtra("Cliente", cliente)
                 startActivity(intent)
             }
+
+            R.id.nav_configuracion -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+
             R.id.nav_logout -> finish()
             else -> Toast.makeText(this, "Opción no implementada", Toast.LENGTH_SHORT).show()
         }
+
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }

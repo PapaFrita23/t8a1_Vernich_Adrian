@@ -2,7 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        app:title="Multimedia">
+        app:title="Multimedia"
+        app:icon="@drawable/baseline_music_note_24">
 
         <SwitchPreferenceCompat
             app:key="reproducirMusica"
@@ -18,7 +19,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="Idioma">
+        app:title="Idioma"
+        app:icon="@drawable/baseline_blur_circular_24">
 
         <ListPreference
             app:key="idioma"
@@ -30,14 +32,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="Datos">
+        app:title="Datos"
+        app:icon="@drawable/baseline_wb_cloudy_24">
 
         <ListPreference
             app:key="datos"
             app:title="Origen de los datos"
             app:useSimpleSummaryProvider="true"
             app:dialogTitle="Indicar País donde vives"
-            app:entries="@array/idioma"
-            app:entryValues="@array/codigoidioma" />
+            app:entries="@array/datos"
+            app:entryValues="@array/codigodatos" />
     </PreferenceCategory>
 </PreferenceScreen>

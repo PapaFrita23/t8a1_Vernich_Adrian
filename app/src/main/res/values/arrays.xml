@@ -8,4 +8,13 @@
         <item>ESP</item>
         <item>ING</item>
     </string-array>
+
+    <string-array name="datos">
+        <item>Base de datos local</item>
+        <item>Servicio web</item>
+    </string-array>
+    <string-array name="codigodatos">
+        <item>DT</item>
+        <item>SV</item>
+    </string-array>
 </resources>
